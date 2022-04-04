@@ -1,5 +1,4 @@
-from robot import Robot
+from battlefield import Battlefield
 
-weapon = Robot('bob')
-weapon.weapon_list()
-weapon.random_weapon()
+battle = Battlefield()
+battle.run_game()

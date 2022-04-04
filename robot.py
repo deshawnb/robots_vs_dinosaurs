@@ -2,21 +2,25 @@ from weapon import Weapon
 import random
 class Robot:
 
-    def __init__(self, name):
+    def __init__(self, name, hp):
         self.name = name
-        self.health = 100
+        self.health = hp
         self.active_weapon = Weapon('', 0)
 
     def attack(self, dinosaur):
-        pass
+        self.dino_hp = dinosaur
+        print(f'the dinosaurs hp is {self.dino_hp}')
+        print(f'{self.name} attacks the dinosuar with {self.active_weapon.name} for {self.active_weapon.attack_power}')
+        self.dino_hp = self.dino_hp - self.active_weapon.attack_power
+        print(f'the dinosaurs hp is now {self.dino_hp}')
+        print('')
 
     def weapon_list(self):
         stick = ['stick', 5]
-        laser_gun = ['laser gun', 10]
-        beam_sword = ['beam sword', 15]
+        laser_gun = ['laser gun', 20]
+        beam_sword = ['beam sword', 40]
         
         self.weapons = [stick, laser_gun, beam_sword,]
-        
 
     def random_weapon(self):
         list_index = len(self.weapons) - 1
