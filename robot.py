@@ -20,6 +20,30 @@ class Robot:
         print(f'the dinosaurs hp is now {self.dino_hp}')
         print('')
 
+    def select_robot(self):
+        user_input = 0
+        while user_input == 0:
+            print('select a robot for battle.')
+            print('1 = toaser, 2 = droid, 3 = robocop, 4 = terminator, 5 = gundam, 6 = autobot')
+            user_input = input()
+            if user_input == '1':
+                self.set_robot(self.toaster)
+            elif user_input == '2':
+                self.set_robot(self.droid)
+            elif user_input == '3':
+                self.set_robot(self.robo_cop)
+            elif user_input == '4':
+                self.set_robot(self.terminator)
+            elif user_input == '5':
+                self.set_robot(self.gundam)
+            elif user_input == '6':
+                self.set_robot(self.autobot)
+            else:
+                print('invalid input')
+                user_input = 0
+        print(f'you have selected {self.name}')
+        self.weapon_select()
+
     def set_robot(self, list):
         self.name = list[0]
         self.health = list[1]
@@ -28,7 +52,7 @@ class Robot:
         user_input = 0
         while user_input == 0:
             print('select a weapon for the robot.')
-            print('1 = stick, 2 = pistol, 3 = laser gun, 4 = beam sword, 5 = plasma rifle, 6 = mech suit')
+            print('1 = stick, 2 = pistol, 3 = laser gun, 4 = beam sword, 5 = plasma rifle, 6 = antimatter rocket')
             user_input = input()
             if user_input == '1':
                 self.active_weapon.set_wepon(self.active_weapon.stick)
