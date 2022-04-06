@@ -20,8 +20,10 @@ class Herd:
         if self.robot_one_hp > 0:
             self.robot_one_hp = self.robot_one_hp - self.herd_attack_power
         elif self.robot_two_hp > 0:
+            self.robot_one_hp = 0
             self.robot_two_hp = self.robot_two_hp - self.herd_attack_power
         elif self.robot_three_hp > 0:
+            self.robot_two_hp = 0
             self.robot_three_hp = self.robot_three_hp - self.herd_attack_power
         else:
             print('the fleet has fallen!')

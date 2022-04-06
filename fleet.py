@@ -20,8 +20,10 @@ class Fleet:
         if self.dino_one_hp > 0:
             self.dino_one_hp = self.dino_one_hp - self.fleet_attack_power
         elif self.dino_two_hp > 0:
+            self.dino_one_hp = 0
             self.dino_two_hp = self.dino_two_hp - self.fleet_attack_power
         elif self.dino_three_hp > 0:
+            self.dino_two_hp = 0
             self.dino_three_hp = self.dino_three_hp - self.fleet_attack_power
         else:
             print('the herd has fallen!')

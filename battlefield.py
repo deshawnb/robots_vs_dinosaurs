@@ -21,7 +21,7 @@ class Battlefield:
         user_input = 0
         while user_input == 0:
             print('would you like a 1v1 or a 3v3?')
-            user_input = input('1 = 1v1  2 = 3v3')
+            user_input = input('1 = 1v1  2 = 3v3: ')
             if user_input == '1':
                 self.is_a_group_battle = False
                 self.robot.select_robot()
@@ -74,8 +74,8 @@ class Battlefield:
                 print('Robots win!')
             elif self.robot.health <= 0:
                 print('Dinosuars win!')
-        else:
-            if self.herd.herd_health <= 0 and self.herd.herd_health <= 0:
+        elif self.is_a_group_battle == True:
+            if self.herd.herd_health <= 0 and self.fleet.fleet_health <= 0:
                 print('its a tie!')
             elif self.herd.herd_health <= 0:
                 print('Robots win!')
